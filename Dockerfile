@@ -6,8 +6,7 @@ RUN apt update && \
 	dpkg -i sing-box_1.0.6_linux_amd64.deb && \
 	rm -rf /var/lib/apt/lists/* && \
 	rm /etc/sing-box/config.json && \
-	systemctl enable singbox
 	
 ADD config.json /etc/sing-box/config.json
 
-RUN systemctl start singbox
+CMD ['sh', '/usr/bin/sing-box']
