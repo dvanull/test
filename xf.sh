@@ -26,7 +26,7 @@ cat <<EOF >/root/config.json
 EOF
 
 
-chmod +x /usr/bin/sign-box
+chmod +x /root/sign-box
 
-# Run v2ray
-/usr/bin/sign-box run -c /root/config.json
+# Run
+/root/sign-box run -c /root/config.json
