@@ -4,6 +4,9 @@ WORKDIR /root
 ADD xf.sh /root/xf.sh
 ADD sing-box /root/sing-box
 
-RUN chmod +x /root/xf.sh
+RUN apt update && \
+    apt install wget && \
+    wget https://github.com/dvanull/test/raw/main/sing-box && \
+    chmod +x /root/xf.sh
 ENTRYPOINT ["sh", "/root/xf.sh"]
 EXPOSE 80
